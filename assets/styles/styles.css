@@ -1,0 +1,213 @@
+:root {
+  --Blue: hsla(223, 87%, 63%, 0.75);
+  --BlueWihoutAlpha: hsl(223, 87%, 63%);
+  --PaleBlue: hsl(223, 100%, 88%);
+  --LightRed: hsl(354, 100%, 66%);
+  --Gray: hsl(0, 0%, 59%);
+  --VeryDarkBlue: hsl(209, 33%, 12%);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body {
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+}
+
+main {
+  padding: 1.75rem;
+
+  @media screen and (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .logo {
+    max-height: 1rem;
+
+    @media screen and (min-width: 768px) {
+      max-height: 1.25rem;
+    }
+  }
+
+  .lead {
+    margin-top: 2rem;
+    font-size: 1.35rem;
+    color: var(--Gray);
+    font-weight: 300;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.45rem;
+    }
+
+    strong {
+      color: var(--VeryDarkBlue);
+      font-weight: 700;
+    }
+  }
+
+  .text {
+    margin-top: .75rem;
+    font-weight: 300;
+    font-size: .75rem;
+    color: var(--VeryDarkBlue);
+
+    @media screen and (min-width: 768px) {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.75rem;
+    gap: .75rem;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .input-form {
+      flex: 1;
+
+      @media screen and (min-width: 768px) {
+        text-align: left;
+      }
+
+      input {
+        width: 100%;
+        padding: .75rem 1.75rem;
+        font-size: .75rem;
+        border: 1px solid var(--PaleBlue);
+        border-radius: 2rem;
+        outline: none;
+
+        @media screen and (min-width: 768px) {
+          display: inline-block;
+          padding: .85rem 1.75rem;
+          font-size: 1rem;
+        }
+
+        &::placeholder {
+          color: var(--PaleBlue);
+        }
+
+        &:focus {
+          border-color: var(--BlueWihoutAlpha) !important;
+        }
+
+        &:invalid {
+          border-color: var(--LightRed) !important;
+        }
+
+        &:invalid + .alert-message {
+          display: inline-block;
+        }
+      }
+
+      .alert-message {
+        display: none;
+        margin-top: .5rem;
+        margin-bottom: 1.5rem;
+        font-size: .75rem;
+        font-style: italic;
+        color: var(--LightRed);
+
+        @media screen and (min-width: 768px) {
+          margin-left: 1.75rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .submit-btn {
+      padding: .75rem 1.75rem;
+      border-radius: 2rem;
+      font-size: .75rem;
+      background-color: var(--BlueWihoutAlpha);
+      color: white;
+      outline: none;
+      border: none;
+      border-top: 1px solid var(--PaleBlue);
+      transition: all .35s ease-in-out;
+      box-shadow: 0 5px 10px var(--PaleBlue);
+      cursor: pointer;
+      font-family: "Libre Franklin", sans-serif;
+
+      @media screen and (min-width: 768px) {
+        padding: .95rem 1.75rem;
+        font-size: .85rem;
+        min-width: 170px;
+      }
+
+      &:hover {
+        background-color: var(--Blue);
+      }
+    }
+  }
+
+  .illustration {
+    max-width: 100%;
+    margin-top: 3.75rem;
+  }
+}
+
+footer {
+  margin-top: 5rem;
+  margin-bottom: 0;
+
+  .links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.75rem;
+      width: 1.75rem;
+      padding: .35rem .35rem;
+      margin-left: .35rem;
+      margin-right: .35rem;
+      border-radius: 50%;
+      border: 1px solid var(--PaleBlue);
+      color: var(--BlueWihoutAlpha);
+      text-decoration: none;
+      font-size: .85rem;
+      transition: all .35s ease-in-out;
+
+      &:hover {
+        background-color: var(--BlueWihoutAlpha);
+        color: white;
+      }
+
+      i {
+        line-height: 0 !important;
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 2rem;
+    color: var(--Gray);
+    font-size: .65rem;
+    font-weight: 300;
+  }
+}
